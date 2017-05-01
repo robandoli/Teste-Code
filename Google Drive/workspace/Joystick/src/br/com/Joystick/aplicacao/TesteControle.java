@@ -1,11 +1,11 @@
+package br.com.Joystick.aplicacao;
 import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import net.java.games.input.Component;
 import net.java.games.input.Controller;
-import net.java.games.input.ControllerEnvironment;;
-
+import net.java.games.input.ControllerEnvironment;
 
 public class TesteControle extends JFrame{
 	

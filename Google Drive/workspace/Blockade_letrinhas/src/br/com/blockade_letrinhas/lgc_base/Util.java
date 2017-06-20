@@ -8,7 +8,7 @@ public class Util {
 
 		final int plA = a.getPos_x() + a.getLargura();
 		final int plB = b.getPos_x() + b.getLargura();
-		final int paA = a.getPos_x() + a.getAltura();
+		final int paA = a.getPos_y() + a.getAltura();
 		final int paB = b.getPos_y() + b.getAltura();
 
 		if (plA > b.getPos_x() && a.getPos_x() < plB && paA > b.getPos_y() && a.getPos_y() < paB) {

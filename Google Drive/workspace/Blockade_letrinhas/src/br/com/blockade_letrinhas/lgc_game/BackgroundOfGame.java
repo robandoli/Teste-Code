@@ -67,7 +67,7 @@ public class BackgroundOfGame extends BackgroundStandart {
 			rastros[ i ].setAtivo(true);
 		}
 		
-		char[][] levelSelecionado = Level.levels[2];
+		char[][] levelSelecionado = Level.levels[1];
 		level = new ElementoGame[ levelSelecionado.length * 5];
 		
 		for (int linha = 0; linha < levelSelecionado.length; linha++) {
@@ -104,6 +104,38 @@ public class BackgroundOfGame extends BackgroundStandart {
 		
 		if ( estado != Estado.JOGANDO){
 			return;
+		}
+		
+		if(!moveu){
+			
+			if(dir_y != 0){
+				
+				if (Game.controleTecla[Game.Tecla.ESQUERDA.ordinal()]) {
+					dir_x = -1;
+
+				} else if (Game.controleTecla[Game.Tecla.DIREITA.ordinal()]){
+					dir_x = 1;
+				}
+				
+				if (dir_x != 0){
+					dir_y = 0;
+					moveu = true;
+				}
+				
+			} else if (dir_x !=0){
+				if (Game.controleTecla[Game.Tecla.CIMA.ordinal()]){
+					dir_y = -1;
+				
+				} else if (Game.controleTecla[Game.Tecla.BAIXO.ordinal()]){
+					dir_y = 1;
+
+				}
+				
+				if (dir_y != 0){
+					dir_x = 0;
+					moveu = true;
+				}
+			}
 		}
 		
 		if (temporizador >= 20) {
@@ -200,7 +232,6 @@ public class BackgroundOfGame extends BackgroundStandart {
 				}
 			}
 		}
-		
 		
 	}
 
